@@ -4,13 +4,12 @@ onready var skin := $Skin
 onready var stats := $Stats
 onready var agent := GSAISteeringAgent.new()
 
+export (String, "knight", "wizard", "assassin") var class_type = "wizard"
 
 func _ready():
 	yield(owner,"ready")
+	Info.player_class = class_type
 	stats.global_update()
-	stats.increment("fru", 5)
-	stats.increment("zug", 5)
-	stats.increment("lup", 5)
 
 func _physics_process(delta):
 	pass

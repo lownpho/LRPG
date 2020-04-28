@@ -10,13 +10,14 @@ func _on_stat_changed(stat_name, value) -> void:
 		"max_hp":
 			$Hp/ProgressBar.max_value = value
 			$Hp/Label.text = "HP: " + str($Hp/ProgressBar.value) + "/" + str($Hp/ProgressBar.max_value)
-		"max_mp":
-			$Mp/ProgressBar.max_value = value
-			$Mp/Label.text = "MP: " + str($Mp/ProgressBar.value) + "/" + str($Mp/ProgressBar.max_value)
+#		"lv":
+#			$Lv/ProgressBar.max_value = pow(value+1, 3)
+#			prints("needed from", value, "to", value+1, ":", pow(value+1, 3)-pow(value, 3))
+#			$Lv/ProgressBar.min_value = pow(value, 3)
+#			$Lv/Label.text = "Lv: " + str(value)
 		"curr_hp":
 			$Hp/ProgressBar.value = value
 			$Hp/Label.text = "HP: " + str($Hp/ProgressBar.value) + "/" + str($Hp/ProgressBar.max_value)
-		"curr_mp":
-			$Mp/ProgressBar.value = value
-			$Mp/Label.text = "MP: " + str($Mp/ProgressBar.value) + "/" + str($Mp/ProgressBar.max_value)
+#		"exp":
+#			$Lv/ProgressBar.value = value
 		

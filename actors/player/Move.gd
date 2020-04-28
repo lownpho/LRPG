@@ -1,7 +1,6 @@
 extends PlayerState
 
-var speed := 200
-
+var speed : int
 var dir := Vector2.ZERO
 var direction := Vector2.ZERO
 var velocity := Vector2.ZERO
@@ -9,7 +8,8 @@ var velocity := Vector2.ZERO
 
 func _ready() -> void:
 	yield(owner, "ready")
-
+	speed = player.stats.get_total("spd")
+	Events.connect("stat_modded", self, "_on_stat_modded")
 
 func unhandled_input(_event: InputEvent) -> void:
 	pass
@@ -41,3 +41,8 @@ func update_agent() -> void:
 	player.agent.position.y = player.global_position.y
 	player.agent.linear_velocity.x = velocity.x
 	player.agent.linear_velocity.y = velocity.y
+
+func _on_stat_modded(stat_name, stat_value) -> void:
+	match stat_name:
+		"spd":
+			speed = stat_value

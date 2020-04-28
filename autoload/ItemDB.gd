@@ -1,55 +1,55 @@
 extends Node
 
 var items := {
-	"Larma" : {
-	"item_name" : "Larma",
-	"item_description" : "Una larma sgenfa, non farlerebbe nemmeno uno gniripillo",
-	"target_slot" : "weapon",
-	"path_texture" : "res://items/weapons/larma/sword.png",
-	"path_scn" : "res://items/weapons/larma/Larma.tscn"
+	"dummy" : {
+		"item_name" : "",
+		"item_description" : "Dummy description",
+		"target_slot" : "",
+		"target_class" : [],
+		"path_texture" : "",
+		"path_scn" : ""
 	},
-	"LarmaDrospide" : {
-	"item_name" : "Larma Drospide",
-	"item_description" : "Inserisci descrizione",
-	"target_slot" : "weapon",
-	"path_texture" : "res://items/weapons/larma/larma_drospide.png",
-	"path_scn" : "res://items/weapons/larma/LarmaDrospide.tscn"
+	"WoodStaff" : {
+		"item_name" : "Wood staff",
+		"item_description" : "A staff made of wood, it sucks",
+		"target_slot" : "weapon",
+		"target_class" : ["wizard"],
+		"path_texture" : "res://items/wizard/weapons/WoodStaff/wood_staff.png",
+		"path_scn" : "res://items/wizard/weapons/WoodStaff/WoodStaff.tscn"
 	},
-	"LarmaDelloSbifernio" : {
-	"item_name" : "Larma Dello Sbifernio",
-	"item_description" : "Inserisci descrizione",
-	"target_slot" : "weapon",
-	"path_texture" : "res://items/weapons/larma/larma_dello_sbifernio.png",
-	"path_scn" : "res://items/weapons/larma/LarmaDelloSbifernio.tscn"
+	"JadeStaff" : {
+		"item_name" : "Jade staff",
+		"item_description" : "A staff bla bla",
+		"target_slot" : "weapon",
+		"target_class" : ["wizard"],
+		"path_texture" : "res://items/wizard/weapons/JadeStaff/jade_staff.png",
+		"path_scn" : "res://items/wizard/weapons/JadeStaff/JadeStaff.tscn"
 	},
-	"GrizineBocre" : {
-	"item_name" : "Grizine Bocre",
-	"item_description" : "Inserisci descrizione",
-	"target_slot" : "weapon",
-	"path_texture" : "res://items/weapons/ghizine/grizine_bocre.png",
-	"path_scn" : "res://items/weapons/ghizine/GhizineBocre.tscn"
+	"DiamondStaff" : {
+		"item_name" : "Diamond staff",
+		"item_description" : "...",
+		"target_slot" : "weapon",
+		"target_class" : ["wizard"],
+		"path_texture" :"res://items/wizard/weapons/DiamondStaff/diamond_staff.png" ,
+		"path_scn" : "res://items/wizard/weapons/DiamondStaff/DiamondStaff.tscn"
 	},
-	"GrizineSprischio" : {
-	"item_name" : "Grizine Sprischio",
-	"item_description" : "Inserisci descrizione",
-	"target_slot" : "weapon",
-	"path_texture" :"res://items/weapons/ghizine/grizine_sprischio.png" ,
-	"path_scn" : "res://items/weapons/ghizine/GhizineSprischio.tscn"
+	"Spark" : {
+		"item_name" : "Spark",
+		"item_description" : "...",
+		"target_slot" : "ability",
+		"target_class" : ["wizard"],
+		"path_texture" :"res://items/wizard/abilities/Spark/spark.png",
+		"path_scn" : "res://items/wizard/abilities/Spark/Spark.tscn"
 	},
-	"SlezaConNipa" : {
-	"item_name" : "Sleza con nipa",
-	"item_description" : "Inserisci descrizione",
-	"target_slot" : "weapon",
-	"path_texture" :"res://items/weapons/sleza/sleza_con_nipa.png",
-	"path_scn" : "res://items/weapons/sleza/SlezaConNipa.tscn"
+	"Meteor" : {
+		"item_name" : "Meteor",
+		"item_description" : "...",
+		"target_slot" : "ability",
+		"target_class" : ["wizard"],
+		"path_texture" :"res://items/wizard/abilities/Meteor/meteor.png",
+		"path_scn" : "res://items/wizard/abilities/Meteor/MeteorBullet.tscn"
 	},
-	"SlezaDiStrelsfre" : {
-	"item_name" : "SlezaDiStreslfre",
-	"item_description" : "Inserisci descrizione",
-	"target_slot" : "weapon",
-	"path_texture" :"res://items/weapons/sleza/sleza_di_strelsfre.png",
-	"path_scn" : "res://items/weapons/sleza/SlezaDiStrelsfre.tscn"
-	},
+	#MAKE IT AUTOMATIC LIKE IN QRPG
 }
 
 func _ready():

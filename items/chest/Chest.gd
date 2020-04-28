@@ -1,6 +1,6 @@
 extends Area2D
 
-export (String) var content = "Larma"
+export (String) var content = "dummy"
 
 
 func _ready():

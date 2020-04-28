@@ -50,6 +50,8 @@ collision_layer = 8
 collision_mask = 0
 script = ExtResource( 2 )
 
+[node name="Stats" parent="." instance=ExtResource( 6 )]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
@@ -62,19 +64,6 @@ anims/run = SubResource( 3 )
 [node name="Sprite" parent="Skin" index="1"]
 texture = ExtResource( 5 )
 hframes = 8
-
-[node name="Stats" parent="." instance=ExtResource( 6 )]
-base = {
-"curr_hp": 0,
-"curr_mp": 0,
-"def": 0,
-"fru": 0,
-"lup": 0,
-"max_hp": 0,
-"max_mp": 0,
-"spd": 0,
-"zug": 0
-}
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 4 )

@@ -6,7 +6,7 @@ signal stat_modded(stat_name, stat_value)
 signal dead
 
 signal item_dropped(item_data)
-signal item_moved(item_data, old_slot, new_slot)
+signal item_moved(item_data, old_slot, new_slot, binding)
 
 
 func _ready():

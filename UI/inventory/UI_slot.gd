@@ -1,19 +1,21 @@
 extends Panel
 
-export (String, "weapon", "ability", "stock", "throw") var slot_type = "stock"
+export (String, "weapon", "ability", "armor", "stock", "throw") var slot_type = "stock"
+export (String, "Q", "E", "R", "") var binding = ""
 export (bool) var empty = true
 
 var item := {
 	"item_name" : "",
 	"item_description" : "",
 	"target_slot" : "",
+	"target_class" : [],
 	"path_texture" : "",
 	"path_scn" : ""
 }
 
 
 func _ready():
-	pass
+	$Label.text = slot_type.left(2)
 
 
 func get_drag_data(position):
@@ -25,11 +27,11 @@ func get_drag_data(position):
 
 
 func can_drop_data(position, data):
-	return empty and (data.item.target_slot == slot_type or slot_type == "stock" or slot_type == "throw")
+	return empty and ((data.item.target_class.has(Info.player_class) and (data.item.target_slot == slot_type)) or slot_type == "stock" or slot_type == "throw")
 
 
 func drop_data(position, data):
-	Events.emit_signal("item_moved", data.item, data.slot_type, slot_type)
+	Events.emit_signal("item_moved", data.item, data.slot_type, slot_type, binding)
 	$TextureRect.texture = data.get_node("TextureRect").texture
 	fill(data.item)
 	data.clear()

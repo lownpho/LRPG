@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://items/wizard/weapons/DiamondStaff/DiamondBullet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://items/wizard/weapons/DiamondStaff/DiamondStaff.gd" type="Script" id=2]
+
+[node name="DiamondStaff" type="Node2D"]
+script = ExtResource( 2 )
+bullet_scn = ExtResource( 1 )
+damage = 20
+
+[node name="Cd" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+[connection signal="timeout" from="Cd" to="." method="_on_Cd_timeout"]

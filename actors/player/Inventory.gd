@@ -9,8 +9,10 @@ func _ready():
 	pass
 
 
-func activate(item_data) -> void:
+func activate(item_data, binding) -> void:
 	var item = load(item_data.path_scn).instance()
+	if item.has_method("bind"):
+		item.bind(binding)
 	get_parent().add_child(item)
 	active_items[item_data.item_name] = item
 	
@@ -27,10 +29,10 @@ func stock(item_data) -> void:
 func trash(item_data) -> void:
 	pass
 
-func _on_item_moved(item_data, old_slot, new_slot) -> void:
+func _on_item_moved(item_data, old_slot, new_slot, binding) -> void:
 	prints(item_data.item_name, "moved from", old_slot, "to", new_slot)
 	if new_slot == "weapon" or new_slot == "ability":
-		activate(item_data)
+		activate(item_data, binding)
 	elif new_slot == "stock" and old_slot != "stock":
 		deactivate(item_data)
 

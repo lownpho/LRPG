@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://items/weapons/ghizine/Ghizine.tscn" type="PackedScene" id=1]
-
-[node name="GhizineSprischio" instance=ExtResource( 1 )]
-base_damage = 20
-knock_amount = 0.2

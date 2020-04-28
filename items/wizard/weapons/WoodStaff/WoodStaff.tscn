@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://items/wizard/weapons/WoodStaff/WoodStaff.gd" type="Script" id=1]
+[ext_resource path="res://items/wizard/weapons/WoodStaff/Bullet.tscn" type="PackedScene" id=2]
+
+
+
+
+
+[node name="WoodStaff" type="Node2D"]
+script = ExtResource( 1 )
+bullet_scn = ExtResource( 2 )
+damage = 5
+
+[node name="Cd" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+[connection signal="timeout" from="Cd" to="." method="_on_Cd_timeout"]
