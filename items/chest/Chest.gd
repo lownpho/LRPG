@@ -1,15 +1,11 @@
 extends Area2D
 
-export var content := {
-	"item_name" : "Lama",
-	"item_description" : "Una lama sgenfa, non farlerebbe nemmeno uno gniripillo",
-	"target_slot" : "weapon",
-	"path_texture" : "res://items/weapons/lama/sword.png",
-	"path_scn" : "res://items/weapons/lama/Lama.tscn"
-}
+export (String) var content = "Larma"
 
 
 func _ready():
+	content = ItemDb.items[content]
+	$Content/Sprite.texture = load(content.path_texture)
 	connect("body_entered", self, "_on_Chest_body_entered")
 	connect("body_exited", self, "_on_Chest_body_exited")
 	$Content.connect("input_event", self, "_on_Content_input_event" )

@@ -1,6 +1,10 @@
+class_name Weapon
+
 extends Area2D
 
 export var scalings := {"fru":0.3, "zug":0.3, "lup":0.3}
+export (int) var base_damage = 0
+
 var can_attack := true
 
 onready var player = get_parent()
@@ -29,7 +33,7 @@ func _calculate_dmg() -> int:
 	var d := 0.0
 	for s in scalings:
 		d += player.stats.get_total(s) * scalings[s]
-	return int(round(d))
+	return base_damage+int(round(d))
 
 
 func _on_cd_timeout():
@@ -39,9 +43,3 @@ func _on_cd_timeout():
 func _on_uptime_timeout():
 	monitoring = false
 
-
-func _on_Lama_body_entered(body):
-	print(body.name)
-	print(_calculate_dmg())
-	if body.has_method("take_damage"):
-		body.take_damage(_calculate_dmg())

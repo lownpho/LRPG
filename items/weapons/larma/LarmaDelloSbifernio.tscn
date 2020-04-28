@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://items/weapons/larma/Larma.tscn" type="PackedScene" id=1]
+
+[node name="Larma" instance=ExtResource( 1 )]
+scalings = {
+"fru": 0.0,
+"lup": 0.9,
+"zug": 0.9
+}
+base_damage = 30
+
+[node name="Sprite" parent="." index="0"]
+visible = true
+frame = 0

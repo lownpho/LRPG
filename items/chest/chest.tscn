@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://items/chest/chest.png" type="Texture" id=1]
 [ext_resource path="res://items/chest/Chest.gd" type="Script" id=2]
-[ext_resource path="res://items/weapons/lama/sword.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "closed"
@@ -68,7 +67,6 @@ polygon = PoolVector2Array( -1, -25, 6, -23, 9, -16, 7, -9, 0, -5, -7, -7, -11, 
 
 [node name="Sprite" type="Sprite" parent="Content"]
 position = Vector2( 0, -15 )
-texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Content"]
 position = Vector2( -1, -15 )

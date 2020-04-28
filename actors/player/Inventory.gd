@@ -28,7 +28,7 @@ func trash(item_data) -> void:
 	pass
 
 func _on_item_moved(item_data, old_slot, new_slot) -> void:
-	print(item_data.item_name, "moved from", old_slot, "to", new_slot)
+	prints(item_data.item_name, "moved from", old_slot, "to", new_slot)
 	if new_slot == "weapon" or new_slot == "ability":
 		activate(item_data)
 	elif new_slot == "stock" and old_slot != "stock":

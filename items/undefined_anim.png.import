@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sword.png-a05f4de6b97861348b73aeb2847965be.stex"
+path="res://.import/undefined_anim.png-7df545c5a1720e0588297b7e299bd7e8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://items/weapons/lama/sword.png"
-dest_files=[ "res://.import/sword.png-a05f4de6b97861348b73aeb2847965be.stex" ]
+source_file="res://items/undefined_anim.png"
+dest_files=[ "res://.import/undefined_anim.png-7df545c5a1720e0588297b7e299bd7e8.stex" ]
 
 [params]
 

@@ -13,9 +13,4 @@ func _ready():
 	stats.increment("lup", 5)
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("attack"):
-		stats.increment("max_hp")
-		stats.heal("hp")
-		stats.increment("max_mp")
-		stats.heal("mp")
-
+	pass
