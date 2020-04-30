@@ -50,13 +50,12 @@ margin_top = 0.0
 margin_right = 19.0
 margin_bottom = 18.0
 slot_type = "ability"
-binding = "Q"
 
 [node name="Panel4" parent="Equip/HBoxContainer/HBoxContainer2" instance=ExtResource( 2 )]
 margin_top = 0.0
 margin_bottom = 18.0
 slot_type = "ability"
-binding = "E"
+binding = "spellE"
 
 [node name="Panel5" parent="Equip/HBoxContainer/HBoxContainer2" instance=ExtResource( 2 )]
 margin_left = 45.0
@@ -64,7 +63,7 @@ margin_top = 0.0
 margin_right = 63.0
 margin_bottom = 18.0
 slot_type = "ability"
-binding = "R"
+binding = "spellR"
 
 [node name="Stock" type="Panel" parent="."]
 margin_top = 90.0

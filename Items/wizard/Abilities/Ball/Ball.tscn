@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Items/wizard/Abilities/Ball/BallBullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Items/wizard/Abilities/Ball/Ball.gd" type="Script" id=3]
+
+[node name="Ball" type="Node2D"]
+script = ExtResource( 3 )
+cooldown = 5.0
+bullet_scn = ExtResource( 2 )
+
+[node name="Cd" type="Timer" parent="."]
+one_shot = true
+[connection signal="timeout" from="Cd" to="." method="_on_Cd_timeout"]

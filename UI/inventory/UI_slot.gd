@@ -1,21 +1,30 @@
-extends Panel
+extends NinePatchRect
 
 export (String, "weapon", "ability", "armor", "stock", "throw") var slot_type = "stock"
-export (String, "Q", "E", "R", "") var binding = ""
-export (bool) var empty = true
+export (String, "spellE", "spellQ", "spellR", "") var binding = ""
+var empty := true
 
-var item := {
-	"item_name" : "",
-	"item_description" : "",
-	"target_slot" : "",
-	"target_class" : [],
-	"path_texture" : "",
-	"path_scn" : ""
+var content := {
+#	"item_name" : "",
+#	"description" : "",
+#	"target_slot" : "",
+#	"target_class" : "",
+#	"thumbnail" : ""
 }
 
 
 func _ready():
-	$Label.text = slot_type.left(2)
+	match slot_type:
+		"weapon":
+			region_rect = Rect2(0,0,18,18)
+		"ability":
+			region_rect = Rect2(18,0,18,18)
+		"armor":
+			region_rect = Rect2(36,0,18,18)
+		"stock":
+			region_rect = Rect2(0,18,18,18)
+		"throw":
+			region_rect = Rect2(18,18,18,18)
 
 
 func get_drag_data(position):
@@ -27,28 +36,58 @@ func get_drag_data(position):
 
 
 func can_drop_data(position, data):
-	return empty and ((data.item.target_class.has(Info.player_class) and (data.item.target_slot == slot_type)) or slot_type == "stock" or slot_type == "throw")
+	var can := false
+	match slot_type:
+		#are we sure?
+		"weapon":
+			can = (!data.empty) and (data.content.target_slot == slot_type) and (Info.player_class == data.content.target_class)
+		"ability":
+			can = (!data.empty) and (data.content.target_slot == slot_type) and (Info.player_class == data.content.target_class)
+		"armor":
+			can = (!data.empty) and (data.content.target_slot == slot_type) and (Info.player_class == data.content.target_class)
+		"stock":
+			can = (!data.empty)
+		"throw":
+			can = (!data.empty)
+	return (can and empty)
 
-
+#redundant!!! but ok.
 func drop_data(position, data):
-	Events.emit_signal("item_moved", data.item, data.slot_type, slot_type, binding)
-	$TextureRect.texture = data.get_node("TextureRect").texture
-	fill(data.item)
-	data.clear()
-	if slot_type == "throw":
-		clear()
+	match slot_type:
+		"weapon":
+			fill(data.content)
+			Events.emit_signal("item_moved", {"slot_from":data.slot_type, "slot_to":slot_type, 
+			"item_name":content.item_name})
+			data.clear()
+		"ability":
+			fill(data.content)
+			Events.emit_signal("item_moved", {"slot_from":data.slot_type, "slot_to":slot_type, 
+			"item_name":content.item_name, "binding":binding})
+			data.clear()
+		"armor":
+			fill(data.content)
+			Events.emit_signal("item_moved", {"slot_from":data.slot_type, "slot_to":slot_type, "item_name":content.item_name})
+			data.clear()
+		"stock":
+			fill(data.content)
+			Events.emit_signal("item_moved", {"slot_from":data.slot_type, "slot_to":slot_type, 
+			"item_name":content.item_name})
+			data.clear()
+		"throw":
+#			Events.emit_signal("item_moved", {"slot_from":data.slot_type, "slot_to":slot_type, 
+#			"item_name":content.item_name})
+			data.clear()
 
-
-func fill(item_data) -> void:
+func fill(new_content) -> void:
 	empty = false
-	for i in item_data:
-		item[i] = item_data[i]
-	hint_tooltip = item.item_description
+	for i in new_content:
+		content[i] = new_content[i]
+	$TextureRect.texture = content.thumbnail
+	hint_tooltip = content.description
 
 
 func clear() -> void:
 	empty = true
-	for i in item:
-		item[i] = ""
+	content.clear()
 	$TextureRect.texture = null
 	hint_tooltip = ""

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Items/Database/ItemData.gd" type="Script" id=1]
+[ext_resource path="res://Items/wizard/Abilities/Ball/FireMeteor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Items/Database/ability_thumbnails.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 3 )
+region = Rect2( 48, 0, 16, 16 )
+
+[resource]
+script = ExtResource( 1 )
+name = "Fire Meteor"
+description = "A ball of fire!"
+target_slot = "ability"
+target_class = "wizard"
+scene_pck = ExtResource( 2 )
+thumbnail = SubResource( 1 )

@@ -9,192 +9,204 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "KinematicBody2D",
+"base": "Node2D",
+"class": "Ball",
+"language": "GDScript",
+"path": "res://Items/wizard/Abilities/Ball/Ball.gd"
+}, {
+"base": "Area2D",
+"class": "BallBullet",
+"language": "GDScript",
+"path": "res://Items/wizard/Abilities/Ball/BallBullet.gd"
+}, {
+"base": "Area2D",
 "class": "Bullet",
 "language": "GDScript",
-"path": "res://items/wizard/weapons/WoodStaff/Bullet.gd"
+"path": "res://Items/wizard/Weapons/Bullets/Bullet.gd"
 }, {
 "base": "Reference",
 "class": "GSAIAgentLocation",
 "language": "GDScript",
-"path": "res://libraries/GSAI/GSAIAgentLocation.gd"
+"path": "res://Libraries/GSAI/GSAIAgentLocation.gd"
 }, {
 "base": "GSAISteeringBehavior",
 "class": "GSAIArrive",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Behaviors/GSAIArrive.gd"
+"path": "res://Libraries/GSAI/Behaviors/GSAIArrive.gd"
 }, {
 "base": "GSAIGroupBehavior",
 "class": "GSAIAvoidCollisions",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Behaviors/GSAIAvoidCollisions.gd"
+"path": "res://Libraries/GSAI/Behaviors/GSAIAvoidCollisions.gd"
 }, {
 "base": "GSAISteeringBehavior",
 "class": "GSAIBlend",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Behaviors/GSAIBlend.gd"
+"path": "res://Libraries/GSAI/Behaviors/GSAIBlend.gd"
 }, {
 "base": "GSAIGroupBehavior",
 "class": "GSAICohesion",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Behaviors/GSAICohesion.gd"
+"path": "res://Libraries/GSAI/Behaviors/GSAICohesion.gd"
 }, {
 "base": "GSAIPursue",
 "class": "GSAIEvade",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Behaviors/GSAIEvade.gd"
+"path": "res://Libraries/GSAI/Behaviors/GSAIEvade.gd"
 }, {
 "base": "GSAIMatchOrientation",
 "class": "GSAIFace",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Behaviors/GSAIFace.gd"
+"path": "res://Libraries/GSAI/Behaviors/GSAIFace.gd"
 }, {
 "base": "GSAISeek",
 "class": "GSAIFlee",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Behaviors/GSAIFlee.gd"
+"path": "res://Libraries/GSAI/Behaviors/GSAIFlee.gd"
 }, {
 "base": "GSAIArrive",
 "class": "GSAIFollowPath",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Behaviors/GSAIFollowPath.gd"
+"path": "res://Libraries/GSAI/Behaviors/GSAIFollowPath.gd"
 }, {
 "base": "GSAISteeringBehavior",
 "class": "GSAIGroupBehavior",
 "language": "GDScript",
-"path": "res://libraries/GSAI/GSAIGroupBehavior.gd"
+"path": "res://Libraries/GSAI/GSAIGroupBehavior.gd"
 }, {
 "base": "GSAIProximity",
 "class": "GSAIInfiniteProximity",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Proximities/GSAIInfiniteProximity.gd"
+"path": "res://Libraries/GSAI/Proximities/GSAIInfiniteProximity.gd"
 }, {
 "base": "GSAISpecializedAgent",
 "class": "GSAIKinematicBody2DAgent",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Agents/GSAIKinematicBody2DAgent.gd"
+"path": "res://Libraries/GSAI/Agents/GSAIKinematicBody2DAgent.gd"
 }, {
 "base": "GSAISpecializedAgent",
 "class": "GSAIKinematicBody3DAgent",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Agents/GSAIKinematicBody3DAgent.gd"
+"path": "res://Libraries/GSAI/Agents/GSAIKinematicBody3DAgent.gd"
 }, {
 "base": "GSAIMatchOrientation",
 "class": "GSAILookWhereYouGo",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Behaviors/GSAILookWhereYouGo.gd"
+"path": "res://Libraries/GSAI/Behaviors/GSAILookWhereYouGo.gd"
 }, {
 "base": "GSAISteeringBehavior",
 "class": "GSAIMatchOrientation",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Behaviors/GSAIMatchOrientation.gd"
+"path": "res://Libraries/GSAI/Behaviors/GSAIMatchOrientation.gd"
 }, {
 "base": "Reference",
 "class": "GSAIPath",
 "language": "GDScript",
-"path": "res://libraries/GSAI/GSAIPath.gd"
+"path": "res://Libraries/GSAI/GSAIPath.gd"
 }, {
 "base": "GSAISteeringBehavior",
 "class": "GSAIPriority",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Behaviors/GSAIPriority.gd"
+"path": "res://Libraries/GSAI/Behaviors/GSAIPriority.gd"
 }, {
 "base": "Reference",
 "class": "GSAIProximity",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Proximities/GSAIProximity.gd"
+"path": "res://Libraries/GSAI/Proximities/GSAIProximity.gd"
 }, {
 "base": "GSAISteeringBehavior",
 "class": "GSAIPursue",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Behaviors/GSAIPursue.gd"
+"path": "res://Libraries/GSAI/Behaviors/GSAIPursue.gd"
 }, {
 "base": "GSAIProximity",
 "class": "GSAIRadiusProximity",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Proximities/GSAIRadiusProximity.gd"
+"path": "res://Libraries/GSAI/Proximities/GSAIRadiusProximity.gd"
 }, {
 "base": "GSAISpecializedAgent",
 "class": "GSAIRigidBody2DAgent",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Agents/GSAIRigidBody2DAgent.gd"
+"path": "res://Libraries/GSAI/Agents/GSAIRigidBody2DAgent.gd"
 }, {
 "base": "GSAISpecializedAgent",
 "class": "GSAIRigidBody3DAgent",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Agents/GSAIRigidBody3DAgent.gd"
+"path": "res://Libraries/GSAI/Agents/GSAIRigidBody3DAgent.gd"
 }, {
 "base": "GSAISteeringBehavior",
 "class": "GSAISeek",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Behaviors/GSAISeek.gd"
+"path": "res://Libraries/GSAI/Behaviors/GSAISeek.gd"
 }, {
 "base": "GSAIGroupBehavior",
 "class": "GSAISeparation",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Behaviors/GSAISeparation.gd"
+"path": "res://Libraries/GSAI/Behaviors/GSAISeparation.gd"
 }, {
 "base": "GSAISteeringAgent",
 "class": "GSAISpecializedAgent",
 "language": "GDScript",
-"path": "res://libraries/GSAI/Agents/GSAISpecializedAgent.gd"
+"path": "res://Libraries/GSAI/Agents/GSAISpecializedAgent.gd"
 }, {
 "base": "GSAIAgentLocation",
 "class": "GSAISteeringAgent",
 "language": "GDScript",
-"path": "res://libraries/GSAI/GSAISteeringAgent.gd"
+"path": "res://Libraries/GSAI/GSAISteeringAgent.gd"
 }, {
 "base": "Reference",
 "class": "GSAISteeringBehavior",
 "language": "GDScript",
-"path": "res://libraries/GSAI/GSAISteeringBehavior.gd"
+"path": "res://Libraries/GSAI/GSAISteeringBehavior.gd"
 }, {
 "base": "Reference",
 "class": "GSAITargetAcceleration",
 "language": "GDScript",
-"path": "res://libraries/GSAI/GSAITargetAcceleration.gd"
+"path": "res://Libraries/GSAI/GSAITargetAcceleration.gd"
 }, {
 "base": "Reference",
 "class": "GSAIUtils",
 "language": "GDScript",
-"path": "res://libraries/GSAI/GSAIUtils.gd"
+"path": "res://Libraries/GSAI/GSAIUtils.gd"
+}, {
+"base": "Node",
+"class": "Hit",
+"language": "GDScript",
+"path": "res://Actors/hit.gd"
+}, {
+"base": "Resource",
+"class": "ItemData",
+"language": "GDScript",
+"path": "res://Items/Database/ItemData.gd"
 }, {
 "base": "State",
 "class": "PlayerState",
 "language": "GDScript",
-"path": "res://actors/player/states/PlayerState.gd"
+"path": "res://Actors/Player/States/PlayerState.gd"
 }, {
-"base": "Node2D",
-"class": "Spark",
-"language": "GDScript",
-"path": "res://items/wizard/abilities/Spark/Spark.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "SparkBullet",
-"language": "GDScript",
-"path": "res://items/wizard/abilities/Spark/SparkBullet.gd"
-}, {
-"base": "Node2D",
+"base": "Reference",
 "class": "Staff",
 "language": "GDScript",
-"path": "res://items/wizard/weapons/WoodStaff/WoodStaff.gd"
+"path": "res://Items/wizard/Weapons/Staves/Staff.gd"
 }, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
-"path": "res://libraries/StateMachine/State.gd"
+"path": "res://Libraries/StateMachine/State.gd"
 }, {
 "base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
-"path": "res://libraries/StateMachine/StateMachine.gd"
+"path": "res://Libraries/StateMachine/StateMachine.gd"
 }, {
 "base": "Area2D",
 "class": "Weapon",
 "language": "GDScript",
-"path": "res://items/wizard/weapons/MeleeWeapon.gd"
+"path": "res://Items/MeleeWeapon.gd"
 } ]
 _global_script_class_icons={
+"Ball": "",
+"BallBullet": "",
 "Bullet": "",
 "GSAIAgentLocation": "",
 "GSAIArrive": "",
@@ -225,9 +237,9 @@ _global_script_class_icons={
 "GSAISteeringBehavior": "",
 "GSAITargetAcceleration": "",
 "GSAIUtils": "",
+"Hit": "",
+"ItemData": "",
 "PlayerState": "",
-"Spark": "",
-"SparkBullet": "",
 "Staff": "",
 "State": "",
 "StateMachine": "",
@@ -236,20 +248,20 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Lrpg"
-run/main_scene="res://screens/main.tscn"
+config/name="LRPG"
+run/main_scene="res://Screens/main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Events="*res://autoload/Events.gd"
-ItemDb="*res://autoload/ItemDB.gd"
-Info="*res://autoload/Info.gd"
+Events="*res://Autoload/Events.gd"
+ItemDb="*res://Autoload/ItemDB.gd"
+Info="*res://Autoload/Info.gd"
 
 [display]
 
-window/size/width=512
-window/size/height=288
+window/size/width=640
+window/size/height=360
 window/size/resizable=false
 window/size/test_width=1440
 window/size/test_height=900
@@ -332,4 +344,5 @@ attack={
 
 [rendering]
 
+quality/2d/use_pixel_snap=true
 environment/default_environment="res://default_env.tres"

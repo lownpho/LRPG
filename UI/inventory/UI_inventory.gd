@@ -6,15 +6,14 @@ func _ready():
 
 
 func _get_empty_stock() -> Panel:
-	var panels = $Stock/HBoxContainer2.get_children()
-	for p in panels:
-		if p.empty == true:
-			return p
+	var slots = get_tree().get_nodes_in_group("slots")
+	for s in slots:
+		if s.slot_type == "stock" and s.empty == true:
+			return s
 	return null
 
 
-func _on_item_dropped(item_data) -> void:
+func _on_item_dropped(content) -> void:
 	var s := _get_empty_stock()
 	if s != null:
-		s.fill(item_data)
-		s.get_node("TextureRect").texture = load(item_data.path_texture)
+		s.fill(content)

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Items/wizard/Weapons/Staves/Staff.gd" type="Script" id=1]
+[ext_resource path="res://Items/wizard/Weapons/Bullets/Bullet.tscn" type="PackedScene" id=2]
+
+[node name="Staff" type="Node2D"]
+script = ExtResource( 1 )
+cooldown = 0.5
+bullet_scn = ExtResource( 2 )
+
+[node name="Cd" type="Timer" parent="."]
+one_shot = true
+[connection signal="timeout" from="Cd" to="." method="_on_Cd_timeout"]
