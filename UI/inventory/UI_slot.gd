@@ -39,11 +39,7 @@ func can_drop_data(position, data):
 	var can := false
 	match slot_type:
 		#are we sure?
-		"weapon":
-			can = (!data.empty) and (data.content.target_slot == slot_type) and (Info.player_class == data.content.target_class)
-		"ability":
-			can = (!data.empty) and (data.content.target_slot == slot_type) and (Info.player_class == data.content.target_class)
-		"armor":
+		"weapon", "ability", "armor":
 			can = (!data.empty) and (data.content.target_slot == slot_type) and (Info.player_class == data.content.target_class)
 		"stock":
 			can = (!data.empty)
@@ -54,7 +50,7 @@ func can_drop_data(position, data):
 #redundant!!! but ok.
 func drop_data(position, data):
 	match slot_type:
-		"weapon":
+		"weapon", "armor", "stock":
 			fill(data.content)
 			Events.emit_signal("item_moved", {"slot_from":data.slot_type, "slot_to":slot_type, 
 			"item_name":content.item_name})
@@ -64,19 +60,12 @@ func drop_data(position, data):
 			Events.emit_signal("item_moved", {"slot_from":data.slot_type, "slot_to":slot_type, 
 			"item_name":content.item_name, "binding":binding})
 			data.clear()
-		"armor":
-			fill(data.content)
-			Events.emit_signal("item_moved", {"slot_from":data.slot_type, "slot_to":slot_type, "item_name":content.item_name})
-			data.clear()
-		"stock":
+		"throw":
 			fill(data.content)
 			Events.emit_signal("item_moved", {"slot_from":data.slot_type, "slot_to":slot_type, 
 			"item_name":content.item_name})
 			data.clear()
-		"throw":
-#			Events.emit_signal("item_moved", {"slot_from":data.slot_type, "slot_to":slot_type, 
-#			"item_name":content.item_name})
-			data.clear()
+			clear()
 
 func fill(new_content) -> void:
 	empty = false

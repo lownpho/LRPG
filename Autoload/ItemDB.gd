@@ -13,7 +13,6 @@ func _ready():
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		while file_name != "":
-			print(file_name.get_file())
 			if !dir.current_is_dir() and file_name.get_extension()=="tres":
 				items[file_name.get_file().left(file_name.length()-5)] = load(_path+file_name.get_file())
 			file_name = dir.get_next()

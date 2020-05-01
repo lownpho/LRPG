@@ -5,15 +5,15 @@ func _ready():
 	Events.connect("item_dropped", self, "_on_item_dropped")
 
 
-func _get_empty_stock() -> Panel:
+func _get_empty_slot(type) -> Panel:
 	var slots = get_tree().get_nodes_in_group("slots")
 	for s in slots:
-		if s.slot_type == "stock" and s.empty == true:
+		if s.slot_type == type and s.empty == true:
 			return s
 	return null
 
 
 func _on_item_dropped(content) -> void:
-	var s := _get_empty_stock()
+	var s := _get_empty_slot("stock")
 	if s != null:
 		s.fill(content)

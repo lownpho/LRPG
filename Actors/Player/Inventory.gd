@@ -18,7 +18,6 @@ func trash(item_data) -> void:
 
 
 func _on_item_moved(msg) -> void:
-	print(msg)
 	if msg.slot_from == "stock":
 		if msg.slot_to == "weapon" or msg.slot_to == "armor":
 			var item = ItemDb.get_instance(msg.item_name)
@@ -29,7 +28,7 @@ func _on_item_moved(msg) -> void:
 			item.binding = msg.binding
 			active_items[msg.item_name] = item
 			get_parent().add_child(item)
-	elif (msg.slot_from == "weapon" or msg.slot_from == "ability" or msg.slot_from == "armor") and msg.slot_to == "stock":
+	elif (msg.slot_from == "weapon" or msg.slot_from == "ability" or msg.slot_from == "armor") and (msg.slot_to == "stock" or msg.slot_to == "throw"):
 		active_items[msg.item_name].queue_free()
 		active_items.erase(msg.item_name)
 	elif msg.slot_from == "ability" and msg.slot_to == "ability":

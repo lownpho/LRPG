@@ -19,7 +19,7 @@ __meta__ = {
 }
 
 [node name="Hp" type="HBoxContainer" parent="."]
-margin_right = 168.0
+margin_right = 211.0
 margin_bottom = 21.0
 
 [node name="Label" type="Label" parent="Hp"]
@@ -33,7 +33,7 @@ valign = 3
 [node name="ProgressBar" type="ProgressBar" parent="Hp"]
 margin_left = 24.0
 margin_top = 4.0
-margin_right = 168.0
+margin_right = 211.0
 margin_bottom = 17.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
