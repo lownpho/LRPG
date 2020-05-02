@@ -14,3 +14,6 @@ func _ready():
 
 func _physics_process(delta):
 	pass
+
+func damage(hit:Hit) -> void:
+	stats.damage(hit)

@@ -9,8 +9,8 @@ func _ready():
 
 
 func update_direction(x):
-	if x==-1:
+	if x<-0.1:
 		sprite.flip_h = true 
-	elif x==1:
+	elif x>0.1:
 		sprite.flip_h = false
 	

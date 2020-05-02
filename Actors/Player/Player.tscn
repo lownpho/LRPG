@@ -5,7 +5,7 @@
 [ext_resource path="res://Actors/Player/Move.gd" type="Script" id=3]
 [ext_resource path="res://Libraries/StateMachine/StateMachine.gd" type="Script" id=4]
 [ext_resource path="res://Actors/Player/player.png" type="Texture" id=5]
-[ext_resource path="res://Actors/Stats.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Actors/Player/PlayerStats.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Actors/Player/Inventory.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -52,10 +52,10 @@ script = ExtResource( 2 )
 
 [node name="Stats" parent="." instance=ExtResource( 6 )]
 base = {
-"curr_hp": 5,
-"def": 0,
-"max_hp": 5,
-"spd": 150
+"curr_hp": 10,
+"def": 1,
+"max_hp": 10,
+"spd": 140
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

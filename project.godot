@@ -340,7 +340,8 @@ attack={
 2d_physics/layer_4="player"
 2d_physics/layer_5="player bullets"
 2d_physics/layer_8="enemies"
-2d_physics/layer_9="enemy bullet"
+2d_physics/layer_9="enemy bullets"
+2d_physics/layer_10="enemy areas"
 
 [rendering]
 

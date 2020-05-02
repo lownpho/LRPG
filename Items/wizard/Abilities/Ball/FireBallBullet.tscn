@@ -3,3 +3,4 @@
 [ext_resource path="res://Items/wizard/Abilities/Ball/BallBullet.tscn" type="PackedScene" id=1]
 
 [node name="FireBallBullet" instance=ExtResource( 1 )]
+damage_mean = 10

@@ -4,8 +4,7 @@
 
 [node name="QuartzBullet" instance=ExtResource( 1 )]
 life_range = 8
-speed = 15
-damage_mean = 5
+damage_mean = 4
 damage_delta = 3
 
 [node name="Sprite" parent="." index="2"]

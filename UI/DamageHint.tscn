@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/theme.tres" type="Theme" id=1]
+[ext_resource path="res://Actors/Enemies/DamageHint.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "yee"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -8, -8 ), Vector2( -8, -40 ) ]
+}
+
+[node name="DamageHint" type="Label"]
+margin_left = -8.0
+margin_top = -8.0
+margin_right = 6.0
+margin_bottom = 13.0
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 0.721569, 0.12549, 0.12549, 1 )
+text = "5"
+align = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "yee"
+anims/yee = SubResource( 1 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
